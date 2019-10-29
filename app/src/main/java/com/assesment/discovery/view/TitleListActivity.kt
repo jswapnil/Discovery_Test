@@ -12,17 +12,24 @@ import com.assesment.discovery.model.network.DataResponse
 import com.assesment.discovery.viewmodel.TitleListViewModel
 import kotlinx.android.synthetic.main.activity_title_list.*
 
+/**
+ * This activity displays list of titles for first user
+ **/
 class TitleListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_title_list)
-        val titleListViewModel = ViewModelProviders.of(this).get(TitleListViewModel::class.java)
+        fetchUserTitles()
+    }
 
+    private fun fetchUserTitles() {
+        val titleListViewModel = ViewModelProviders.of(this).get(TitleListViewModel::class.java)
         titleListViewModel.getUsers().observe(this, Observer {
             if (it != null) {
                 when (it.status) {
-                    DataResponse.Status.LOADING -> tv_status.text = "LOADING..."
+                    DataResponse.Status.LOADING -> tv_status.text =
+                        getString(R.string.loading_label)
                     DataResponse.Status.SUCCESS -> {
                         tv_status.visibility = View.GONE
                         rv_title.visibility = View.VISIBLE
@@ -32,7 +39,7 @@ class TitleListActivity : AppCompatActivity() {
                         rv_title.adapter = titleListAdapter
                     }
                     DataResponse.Status.ERROR -> {
-                        tv_status.text = "DATA ERROR..."
+                        tv_status.text = getString(R.string.error_label)
                     }
                 }
             }

@@ -3,6 +3,9 @@ package com.assesment.discovery.model.network
 
 import androidx.annotation.NonNull
 
+/**
+ * This class is used to pass status, data and error
+ * **/
 class DataResponse<ResultType> {
 
     val data: ResultType?

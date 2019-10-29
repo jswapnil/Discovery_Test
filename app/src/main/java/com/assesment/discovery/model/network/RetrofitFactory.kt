@@ -14,6 +14,9 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.jackson.JacksonConverterFactory
 import java.util.concurrent.TimeUnit
 
+/**
+ * This class is used to configure Retrofit, OkHttp and Jackson together
+ * **/
 object RetrofitFactory {
 
     private var retrofit: Retrofit? = null

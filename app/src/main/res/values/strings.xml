@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Discovery Test</string>
+    <string name="loading_label">LOADING…</string>
+    <string name="error_label">ERROR…</string>
 </resources>

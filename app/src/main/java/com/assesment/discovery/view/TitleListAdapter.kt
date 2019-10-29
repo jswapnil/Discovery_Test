@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.assesment.discovery.R
 import com.assesment.discovery.model.data.UserPost
 
+/**
+ * Adapter to show list of titles with description
+ * **/
 class TitleListAdapter(private val userPosts: List<UserPost>) : RecyclerView.Adapter<TitleViewHolder>() {
 
 

@@ -6,6 +6,9 @@ import android.graphics.drawable.Drawable
 import androidx.recyclerview.widget.RecyclerView
 import com.assesment.discovery.R
 
+/**
+ * This is used to display divider in RecyclerView
+ * **/
 class DividerItemDecorator(context: Context) : RecyclerView.ItemDecoration() {
     private var mDivider: Drawable? = null
 

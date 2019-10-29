@@ -16,6 +16,9 @@ class TitleListViewModel : ViewModel() {
 
     var userPostsLiveData: MutableLiveData<DataResponse<List<UserPost>>>? = null
 
+    /**
+     * We are saving and checking 'userPostsLiveData' to avoid API call for configuration changes
+     * **/
     fun getUsers(): LiveData<DataResponse<List<UserPost>>> {
         if (userPostsLiveData == null || userPostsLiveData!!.value == null) {
             userPostsLiveData = MutableLiveData()

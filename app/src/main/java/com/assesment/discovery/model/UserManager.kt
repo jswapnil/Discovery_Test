@@ -8,7 +8,9 @@ import io.reactivex.Observable
 
 object UserManager {
 
-
+    /**
+     * Here we are fetching users list and then fetching titles list for first user
+     * **/
     fun getUsers(): Observable<List<UserPost>> {
         val userResponseObservable = ServiceProvider.getUserService().getUsers(getUsersUrl())
 
